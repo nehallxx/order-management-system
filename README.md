@@ -1,31 +1,41 @@
 # order-management-system
 ```steps to setup```
-```1- clone the repo:
+```
+1- clone the repo:
    git clone (https://github.com/nehallxx/order-management-system.git) 
    and change to repo directory
 ```
-   ```cd "order-management-system"
-   ```
-```2- install the following:
+```
+  cd "order-management-system"
+```
+```
+2- install the following:
    npm install
 ```
    
-```3- open .env file and add the database
+```
+3- open .env file and add the database
    e.g: DATABASE_URL="postgresql://user_name:passwrd@localhost:5432/order_management"
 ```
-```4- setup prisma:
+```
+4- setup prisma:
    npx prisma migrate dev
    npx prisma generate
 ```
-```5- seed databse with data:
+```
+5- seed databse with data:
    npm run seed
 ```
-```6- run the app:
+```
+6- run the app:
    npm run start
 ```
-```7- open any browser and paste this: http://localhost:3000/api
 ```
-```8- to test:
+ 7- open any browser and paste this:
+ http://localhost:3000/api
+```
+```
+8- to test:
    a- add to cart:
       -navigate to POST /api/cart/add endpoint in CartController and click on it then click on (try it out)
       -fill in userId, productId,quantity.
@@ -55,13 +65,3 @@
      -navigate to POST /api/orders/apply-coupon
      -enter orderId and couponCode then execute
 ```
-
-
-
-
-
-
-
-
-
-
