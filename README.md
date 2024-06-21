@@ -1,40 +1,63 @@
 # order-management-system
-steps to setup
-1- clone the repo:
+```steps to setup```
+```1- clone the repo:
    git clone (https://github.com/nehallxx/order-management-system.git) 
    and change to repo directory
-   cd "order-management-system" 
-2- install the following:
+```
+   ```cd "order-management-system"
+   ```
+```2- install the following:
    npm install
-3- open .env file and add the database
+```
+   
+```3- open .env file and add the database
    e.g: DATABASE_URL="postgresql://user_name:passwrd@localhost:5432/order_management"
-4- setup prisma:
+```
+```4- setup prisma:
    npx prisma migrate dev
    npx prisma generate
-5- seed databse with data:
+```
+```5- seed databse with data:
    npm run seed
-6- run the app:
+```
+```6- run the app:
    npm run start
-7- to test:
+```
+```7- open any browser and paste this: http://localhost:3000/api
+```
+```8- to test:
    a- add to cart:
-   curl -X POST http://localhost:3000/api/cart/add -H "Content-Type: application/json" -d '{"userId": 1, "productId": 1, "quantity": 2}'
+      -navigate to POST /api/cart/add endpoint in CartController and click on it then click on (try it out)
+      -fill in userId, productId,quantity.
+      -click "Execute" to send request and see response.
    b- view cart:
-   curl http://localhost:3000/api/cart/1
+      -navigate to GET /api/cart/{userId}
+      -enter userId and click execute
    c- update:
-   curl -X PUT http://localhost:3000/api/cart/update -H "Content-Type: application/json" -d '{"cartItemId": 1, "quantity": 3}'
-   d- make order:
-   curl -X POST http://localhost:3000/api/orders -H "Content-Type: application/json" -d '{"userId": 1}'
-   e- get order with id:
-   curl http://localhost:3000/api/orders/1
-   f- update status of order:
-   curl -X PUT http://localhost:3000/api/orders/1/status -H "Content-Type: application/json" -d '{"status": "SHIPPED"}'
-   h- order history:
-   curl http://localhost:3000/api/users/1/orders
-   i- add coupon:
-   curl -X POST http://localhost:3000/api/orders/apply-coupon -H "Content-Type: application/json" -d '{"orderId": 1, "couponCode": "DISCOUNT10"}'
+      -navigate to PUT /api/cart/update
+      -fill in cartItemId and quantity then execute
+   d- remove from cart:
+     - navigate to DELETE /api/cart/remove
+     - enter the cartItemId then execute
+   e- make order:
+      -navigate to POST /api/orders
+      -enter the userId and then execute.
+   f- get order with id:
+      - navigate to GET /api/orders/{orderId}
+      - enter orderId then execute
+   g- update order status:
+   -navigate to PUT /api/orders/{orderId}/status
+   -enter the orderId and new status value then execute
+   h- view order history:
+     - navigate to GET /api/users/{userId}/orders
+     - enter userId and then execute
+   i- apply coupon:
+     -navigate to POST /api/orders/apply-coupon
+     -enter orderId and couponCode then execute
+```
 
 
-NOTE: just make sure you fill in the tables with suitable data e.g userID, productId, etc.. 
+
 
 
 
