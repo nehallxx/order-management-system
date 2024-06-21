@@ -1,8 +1,8 @@
 # order-management-system
 steps to setup
 1- clone the repo:
-   git clone <repository-url>
-   #change to repo directory
+   git clone (https://github.com/nehallxx/order-management-system.git) 
+   and change to repo directory
    cd "order-management-system" 
 2- install the following:
    npm install
